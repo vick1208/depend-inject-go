@@ -3,11 +3,9 @@
 
 package simple
 
-import (
-	"github.com/google/wire"
-)
+import "github.com/google/wire"
 
-func InitService() *SimpleService {
+func InitializedService() *SimpleService {
 	wire.Build(
 		NewSimpleRepo, NewSimpleService,
 	)

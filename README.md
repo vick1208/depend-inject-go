@@ -1,6 +1,4 @@
-# Belajar Golang Restful API
+# Belajar Golang Dependency Injection
 
-Repository ini dibuat untuk mempelajari penggunaan
-Restful API dengan bahasa Go
-
-Test Ini
+Repo ini digunakan untuk mempelajari
+Dependency Injection dengan Wire
