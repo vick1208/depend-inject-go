@@ -72,3 +72,8 @@ func InitializedConfig() *Configuration {
 
 	return nil
 }
+
+func InitializedConnect(name string) (*Connection, func()) {
+	wire.Build(NewConnection, NewFile)
+	return nil, nil
+}
