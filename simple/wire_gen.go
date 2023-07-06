@@ -8,8 +8,18 @@ package simple
 
 // Injectors from injector.go:
 
-func InitializedService() *SimpleService {
-	simpleRepo := NewSimpleRepo()
-	simpleService := NewSimpleService(simpleRepo)
-	return simpleService
+func InitializedService(isError bool) (*SimpleService, error) {
+	simpleRepo := NewSimpleRepo(isError)
+	simpleService, err := NewSimpleService(simpleRepo)
+	if err != nil {
+		return nil, err
+	}
+	return simpleService, nil
+}
+
+func InitializedDatabaseRepository() *DatabaseRepo {
+	databasePostgreSQL := NewDatabasePostgre()
+	databaseMongoDB := NewDatabaseMongoDB()
+	databaseRepo := NewDatabaseRepo(databasePostgreSQL, databaseMongoDB)
+	return databaseRepo
 }
